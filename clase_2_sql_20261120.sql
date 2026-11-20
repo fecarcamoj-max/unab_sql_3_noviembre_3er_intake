@@ -86,6 +86,16 @@ select * from PERSONA limit 3;
 select COUNT(*) from persona;
 # misma consulta a una columna en específico agregando un alias
 select COUNT(id) as total_registros from persona;
+#SUMAR LOS VALORES DE LOS IDS, PROMEDIO DE LOS IDS.
+select SUM(id) as suma_ids, AVG(id) as prom_ids from persona;
+#MAX de la columna, MIN de la col, Desviación estándar.
+select MAX(id) as max_id, MIN(id) as min_id, std(id) desv_std_id 
+from persona;
+# MAX, MIN aplicar a campos fecha:
+select max(fecha_nacimiento) reciente, min(fecha_nacimiento) longevo
+from persona;
+
+
 
 # SENTENCIA WHERE -> Filtrar información.
 select * from persona where id = 12;
