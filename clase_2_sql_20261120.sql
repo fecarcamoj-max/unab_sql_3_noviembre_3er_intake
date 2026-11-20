@@ -94,12 +94,19 @@ from persona;
 # MAX, MIN aplicar a campos fecha:
 select max(fecha_nacimiento) reciente, min(fecha_nacimiento) longevo
 from persona;
+# Operaciones aritméticas:::
+select 1+2, 2*2, 10/2, 10-8, id * id, id * 100
+from persona;
 
 
 
 # SENTENCIA WHERE -> Filtrar información.
+# Muestra a la persona con id 12.
 select * from persona where id = 12;
-
+# Muestra a la persona con id 12 y a la persona con id 11
+select * from persona where id = 12 and id = 11; #Incorrecto
+select * from persona where id = 12 or id = 11; #correcto
+select * from persona where id in (11, 12); #correcto
 
 
 
