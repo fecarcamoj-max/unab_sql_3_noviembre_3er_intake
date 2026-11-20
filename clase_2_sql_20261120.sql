@@ -82,8 +82,10 @@ select "TEXTO", 123, "2026-01-01";
 select * from PERSONA limit 3;
 
 #Sentencias de Operaciones SQL: COUNT, SUM, MIN, MAX, STD, AVG
-
-select
+# Contar la cantidad de registros que hay dentro de la bds.
+select COUNT(*) from persona;
+# misma consulta a una columna en específico agregando un alias
+select COUNT(id) as total_registros from persona;
 
 # SENTENCIA WHERE -> Filtrar información.
 select * from persona where id = 12;
