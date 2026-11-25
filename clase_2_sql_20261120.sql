@@ -142,6 +142,71 @@ select * from persona where year(fecha_nacimiento) between
 2000 and 2030;
 
 # Comparar textos....
+select * from persona;
+# Mostrar a las personas con nombre marta.
+select * from persona where nombre = "marta";
+select * from persona where nombre = "MARTA";
+select * from persona where nombre = "Marta";
+# Mostrar si es que un texto está contenido en la columna.
+# Mostrar si en el nombre la persona tiene una vocal a.
+select * from persona where nombre like "%a%";
+# Mostrar a los nombres que parten con la letra R.
+select * from persona where nombre like "r%";
+#Mostrar a los nombres que terminen con la letra N.
+select * from persona where nombre like "%n";
+
+/*
+ * Función de fecha
+FECHA() MySQL DATE() extrae la parte de fecha de una
+expresión de fecha.
+DATEDIFF() MySQL DATEDIFF() devuelve el número de días entre dos
+fechas o fechas y tiempos.
+CURDATE() En MySQL, el CURDATE() devuelve la fecha actual.
+YEAR() MySQL YEAR() devuelve el año para una fecha determinada.
+MONTH() MySQL MONTH() devuelve el mes correspondiente a la fecha
+dentro de un rango del 1 al 12 (enero a diciembre).
+ * */
+#DATE -> Si viene en Datetime, lo deja en date.
+select DATE("2026-01-03 21:00:15");
+#DATEDIFF()
+select datediff("2026-11-25", "2026-01-01") as dias;
+select datediff("2026-01-01", "2026-11-25");
+select ABS(datediff("2026-01-01", "2026-11-25"));
+
+#Comparaciones de NULL y NOT NULL.
+#Caso: Mostrar a las personas que no tienen nombre.
+select * from persona where nombre = "";
+#correcto:
+select * from persona where nombre is null;
+
+#Caso Mostrar a las personas que sí tengan un nombre registrado.
+#( QUE NO SEAN NULOS.)
+select * from persona where nombre is not null;
+
+#!=, <> distinto de ó NO IGUAL.
+# Caso: Mostrar a todos menos a fabian.
+select * from persona where nombre != "fabian";
+select * from persona where nombre <> "fabian";
+select * from persona where nombre not in ("fabian");
+
+#Distinct = Mostrar los registros sin repetir.
+insert into persona (nombre, apodo)
+values ("marta", "marta1"), ("marta", "marta2"),
+("marta", "marta3");
+
+select * from PERSONA;
+select distinct * from persona;
+select distinct nombre from persona;
+
+#Order By = Ordenar los resultados por una col en específico.
+
+
+
+# GROUP BY - Agrupación.
+
+
+
+
 
 
 
