@@ -118,6 +118,42 @@ select * from persona where month(fecha_nacimiento) = 1;
 # Mostrar a las personas que hayan nacido en 2026
 select * from persona where year(fecha_nacimiento) = 2026;
 
+# Aplicar rangos a los filtros. > <, >=, <=, between (entre)
+select * from persona where id > 9; # ]9, +]
+select * from persona where id >= 9;# [9, +]
+select * from persona where id < 9; # [-, 9[ 
+select * from persona where id <= 9;# [-, 9]
+# Años:
+select * from persona where year(fecha_nacimiento) >= 2000;
+
+#Rangos con límites, de inicio a fin. AND y.
+#Caso: Mostrar a las personas que tengan un id entre 10 y 20.
+select * from persona where id >= 10 and id <= 20;
+select * from persona where id between 10 and 20;
+
+#Caso: Mostrar a las personas entre 2000 y 2030.
+select * from persona where fecha_nacimiento >= "2000-01-01"
+and fecha_nacimiento <= "2030-01-01";
+
+select * from persona where fecha_nacimiento between 
+"2000-01-01" and "2030-01-01";
+
+select * from persona where year(fecha_nacimiento) between 
+2000 and 2030;
+
+# Comparar textos....
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
