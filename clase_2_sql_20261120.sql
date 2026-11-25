@@ -107,6 +107,18 @@ select * from persona where id = 12;
 select * from persona where id = 12 and id = 11; #Incorrecto
 select * from persona where id = 12 or id = 11; #correcto
 select * from persona where id in (11, 12); #correcto
+#Comparación con fechas.
+select * from persona where fecha_nacimiento = "1990-01-01";
+#Operaciones sobre fechas que también se pueden aplicar a los 
+# filtros where:
+select month(fecha_nacimiento), year(fecha_nacimiento)
+from persona;
+# Mostrar a las personas que hayan nacido en enero.
+select * from persona where month(fecha_nacimiento) = 1;
+# Mostrar a las personas que hayan nacido en 2026
+select * from persona where year(fecha_nacimiento) = 2026;
+
+
 
 
 
